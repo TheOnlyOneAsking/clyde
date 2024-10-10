@@ -4,7 +4,9 @@ import requests
 
 app = Flask(__name__)
 
-#
+# Set your OpenAI API key here
+OPENAI_API_KEY = "YOUR_OPENAI_API_KEY"
+
 @app.route('/')
 def index():
     return render_template('index.html')
