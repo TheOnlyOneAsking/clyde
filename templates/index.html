@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clyde AI</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Poppins', Arial, sans-serif; /* Use Poppins font */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient background for form */
+            padding: 30px; /* More padding */
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 255, 255, 0.3); /* Softer shadow */
+            margin-top: 20px;
+            transition: transform 0.3s; /* Transition effect */
+            width: auto; /* Set to auto to prevent stretching */
+            max-width: 200px; /* Set a maximum width to prevent it from getting too wide */
+            margin-left: auto; /* Center the button horizontally */
+            margin-right: auto; /* Center the button horizontally */
+        }
+
+        form:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        input[type="email"] {
+            width: calc(100% - 20px); /* Make input take full width minus padding */
+            padding: 10px;
+            border: 2px solid #20A9E8; /* Update border to match gradient */
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 10px; 
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus {
+            border-color: #00ffcc;
+            outline: none; 
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient button */
+            color: #121212; /* Button text color */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+        }
+
+        button:hover {
+            background-color: #00ffcc; /* Lighter button color on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        .logo {
+            font-size: 80px;
+            margin-top: 50px;
+            animation: glow 1.5s infinite alternate;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient text */
+            
+            /* Vendor prefixes for background-clip */
+            -webkit-background-clip: text; /* For Safari, Chrome */
+            -moz-background-clip: text; /* For Firefox */
+            -o-background-clip: text; /* For Opera (older versions) */
+            -ms-background-clip: text; /* For Internet Explorer/Edge */
+            background-clip: text; /* Standard property */
+
+            -webkit-text-fill-color: transparent; /* Ensures gradient text visibility on webkit browsers */
+            color: transparent; /* Fallback for other browsers */
+            text-shadow: 0 0 10px rgba(31, 95, 160, 0.5), 0 0 20px rgba(32, 169, 232, 0.5);
+        }
+
+
+        .ai-output {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #1b6be3;
+            text-shadow: 0 0 8px #1b6be3;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .wave-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .wave {
+            width: 20px;
+            height: 80px;
+            margin: 0 6px;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient wave animation */
+            animation: wave 1s infinite ease-in-out;
+        }
+
+        .wave:nth-child(2) {
+            animation-delay: -0.4s;
+        }
+
+        .wave:nth-child(3) {
+            animation-delay: -0.6s;
+        }
+
+        .wave:nth-child(4) {
+            animation-delay: -0.8s;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 15px #1F5FA0, 0 0 30px #20A9E8; }
+            100% { text-shadow: 0 0 30px #1F5FA0, 0 0 45px #20A9E8; }
+        }
+
+        @keyframes wave {
+            0%, 40%, 100% {
+                transform: scaleY(0.4);
+            }
+            20% {
+                transform: scaleY(1);
+            }
+        }
+
+        .activate-button {
+            margin-top: 40px;
+            padding: 5px 15px; /* Reduced padding for a smaller button */
+            font-size: 20px;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient for activate button */
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto; /* Set to auto to prevent stretching */
+            max-width: 200px; /* Set a maximum width to prevent it from getting too wide */
+            display: block; /* Set to block for centering */
+            margin-left: auto; /* Center the button horizontally */
+            margin-right: auto; /* Center the button horizontally */
+        }
+
+        .activate-button:hover {
+            background-color: #00ffcc; /* Lighter button color on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="logo">clyde.ai</div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>
+
+    <button class="activate-button" id="activateButton">Activate Clyde</button>
+
+    <script>
+                navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                // Microphone access granted
+            })
+            .catch(err => {
+                console.error('Error accessing microphone:', err);
+            });
+
+        const aiOutput = document.getElementById('aiOutput');
+        const activateButton = document.getElementById('activateButton');
+
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        activateButton.addEventListener('click', () => {
+            aiOutput.textContent = "Clyde is listening... Say 'Clyde' to start.";
+            activateButton.style.display = 'none';
+            startClyde();
+        });
+
+        function startClyde() {
+            if (!SpeechRecognition) {
+                aiOutput.textContent = 'Speech recognition is not supported in this browser.';
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            recognition.onresult = function (event) {
+                const transcript = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+
+                if (transcript.includes("clyde")) {
+                    handleCommand(transcript);
+                }
+            };
+
+            recognition.onerror = function (event) {
+                console.error('Error occurred in speech recognition:', event);
+                aiOutput.textContent = 'Error occurred during speech recognition.';
+            };
+
+            recognition.start();
+        }
+
+        function handleCommand(transcript) {
+            if (transcript.includes("open youtube")) {
+                window.open("https://www.youtube.com", "_blank");
+                speak("Opening YouTube...");
+            } else if (transcript.includes("open game")) {
+                window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
+                speak("Opening GeForceNow...");
+            } else if (transcript.includes("search youtube")) {
+                speak("What would you like me to search on YouTube?");
+                
+                recognition.onresult = function (event) {
+                    const youtubeQuery = event.results[event.results.length - 1][0].transcript.trim().toLowerCase().replace("clyde", "").replace("search youtube", "").trim();
+                    
+                    if (youtubeQuery) {
+                        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeQuery)}`, "_blank");
+                        speak(`Searching YouTube for "${youtubeQuery}"...`);
+                        aiOutput.textContent = `Searching YouTube for "${youtubeQuery}"...`;
+                    } else {
+                        speak("I didn't catch what you wanted to search.");
+                    }
+                };
+            } else if (transcript.includes("solve")) {
+                const query = transcript.replace("solve", "").trim();
+                try {
+                    const result = eval(query);  // This evaluates the math expression
+                    aiOutput.textContent = `The answer is ${result}.`;
+                } catch (error) {
+                    aiOutput.textContent = `Sorry, I couldn't solve that.`;
+                }
+            } else if (transcript.includes("search")) {
+                const query = transcript.replace("clyde", "").replace("search", "").trim();
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
+                aiOutput.textContent = `Searching for "${query}"...`;
+            } else if (transcript.includes("quit")) {
+                speak("Quitting");
+                window.close();
+            } else if (transcript.includes("send email")) {
+                speak("Who would you like to send the email to?");
+                const emailInputForm = document.createElement('form');
+                const inputField = document.createElement('input');
+                inputField.type = 'email';
+                inputField.placeholder = 'Enter recipient email';
+                inputField.id = 'recipientEmail';
+                
+                const submitButton = document.createElement('button');
+                submitButton.textContent = 'Send';
+                
+                emailInputForm.appendChild(inputField);
+                emailInputForm.appendChild(submitButton);
+                document.body.appendChild(emailInputForm);
+
+                emailInputForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const emailAddress = inputField.value;
+                    if (emailAddress) {
+                        window.location.href = `mailto:${emailAddress}`;
+                        speak(`Sending an email to ${emailAddress}...`);
+                        document.body.removeChild(emailInputForm);  // Clean up after submission
+                    } else {
+                        speak("Please provide a valid email address.");
+                    }
+                });
+            } else if (transcript.includes("play music")) {
+                const song = prompt("What song would you like to play?");
+                if (song) {
+                    const query = encodeURIComponent(song);
+                    window.open(`https://open.spotify.com/search/${query}`, "_blank");
+                    aiOutput.textContent = `Playing "${song}" on Spotify...`;
+                } else {
+                    aiOutput.textContent = "Okay, no song selected.";
+                }
+            } else if (transcript.includes("set alarm")) {
+                speak("Alarm set for 7:00 AM.");
+            } else if (transcript.includes("what's the weather in")) {
+                const location = transcript.split("in").pop().trim();
+                const weather = weatherData[location] || "Sorry, I don't have data for that location.";
+                speak(weather);
+            } else if (transcript.includes("find restaurants")) {
+                speak("Which location would you like me to search for restaurants in?");
+                recognition.onresult = function (event) {
+                    const location = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+                    if (location) {
+                        const url = `https://www.yelp.com/search?find_desc=restaurants&find_loc=${encodeURIComponent(location)}`;
+                        window.open(url, "_blank");
+                        speak(`Searching for restaurants in ${location}...`);
+                    }
+                };
+            } else if (transcript.includes("play radio")) {
+                speak("Playing BBC Radio...");
+                window.open("https://www.bbc.co.uk/sounds/play/live:bbc_radio_one", "_blank");
+            } else if (transcript.includes("ask gpt") || transcript.includes("chatgpt")) {
+                const userQuery = transcript.replace("ask gpt", "").replace("chatgpt", "").trim();
+                
+                if (userQuery) {
+                    speak("Let me ask ChatGPT for you...");
+                    
+                    // Call the GPT API
+                    askGPT(userQuery).then(gptResponse => {
+                        // Clyde speaks the GPT response
+                        speak(gptResponse);
+                    }).catch(error => {
+                        speak("Sorry, I couldn't connect to ChatGPT right now.");
+                        console.error("Error connecting to GPT:", error);
+                    });
+                } else {
+                    speak("Please tell me what to ask ChatGPT.");
+                }
+            } else {
+                speak("Yes, How may I assist you?");
+            }
+
+            aiOutput.textContent = transcript;
+        }
+
+        async function askGPT(prompt) {
+            const apiKey = "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";  // Use your actual OpenAI API key
+            const url = "https://api.openai.com/v1/chat/completions"; // Update to use chat/completions endpoint
+            
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",  // Specify model
+                    messages: [
+                        {"role": "system", "content": "You are a helpful assistant."}, 
+                        {"role": "user", "content": prompt}
+                    ],
+                    max_tokens: 100,  // Adjust as necessary
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Network response was not ok: " + response.statusText);
+            }
+
+            const data = await response.json();
+            
+            // Check if choices exist in the response
+            if (data.choices && data.choices.length > 0) {
+                return data.choices[0].message.content; // Correct way to access message
+            } else {
+                throw new Error("No choices returned from API");
+            }
+        }
+
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+
+            // Attempt to find a British male voice
+            const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
+
+            // Set the voice for the utterance
+            utterance.voice = britishMaleVoice || voices.find(voice => voice.lang === 'en-GB');
+            utterance.lang = 'en-GB';
+            speechSynthesis.speak(utterance);
+        }
+
+        // Immediately set the voice after loading
+        window.speechSynthesis.onvoiceschanged = () => {
+            const voices = window.speechSynthesis.getVoices();
+            // Check if we have the desired voice
+            const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
+
+            // Ensure the voice is stored or accessible for future use
+            if (britishMaleVoice) {
+                // Optionally store or configure it here
+            }
+        };
+
+    </script>
+</body>
+</html>
