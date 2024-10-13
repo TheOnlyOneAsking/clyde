@@ -227,9 +227,15 @@
             if (transcript.includes("open youtube")) {
                 window.open("https://www.youtube.com", "_blank");
                 speak("Opening YouTube...");
-            } else if (transcript.includes("open game")) {
-                window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
+            } else if (transcript.includes("open gmail")) {
+                window.open("https://mail.google.com/mail/u/", "_blank");
+                speak("Opening Gmail...");
+            } else if (transcript.includes("open zoom")) {
+                window.open("https://www.zoom.com/", "_blank");
                 speak("Opening GeForceNow...");
+            } else if (transcript.includes("whats for lunch")) {
+                window.open("https://linqconnect.com/public/menu/U9RNQP?buildingId=fd7d57a2-273d-ea11-ba38-b2e93801c46d", "_blank");
+                speak("Opening Your Lunch Menu...");
             } else if (transcript.includes("search youtube")) {
                 speak("What would you like me to search on YouTube?");
                 
