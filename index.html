@@ -262,6 +262,9 @@
                 speak("Opening Your Lunch Menu...");
             } else if (transcript.includes("search youtube")) {
                 speak("What would you like me to search on YouTube?");
+            } else if (transcript.includes("open game")) {
+                window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
+                speak("Opening GeForceNow...");
                 
                 recognition.onresult = function (event) {
                     const youtubeQuery = event.results[event.results.length - 1][0].transcript.trim().toLowerCase().replace("clyde", "").replace("search youtube", "").trim();
