@@ -291,7 +291,7 @@
                 } catch (error) {
                     aiOutput.textContent = `Sorry, I couldn't solve that.`;
                 }
-            } else if (transcript.includes("search")) {
+            } else if (transcript.includes("search")) { 
                 const query = transcript.replace("clyde", "").replace("search", "").trim();
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
                 aiOutput.textContent = `Searching for "${query}"...`;
