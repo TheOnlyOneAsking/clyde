@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
+    <title>Developer Panel</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Poppins', Arial, sans-serif; /* Use Poppins font */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+        }
+
+        h1 {
+            font-size: 80px; /* Size of "Dev Panel" text */
+            margin: 0;
+            animation: glow 1.5s infinite alternate; /* Glow animation */
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient text */
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+            -ms-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent; /* Ensures gradient text visibility */
+            text-shadow: 0 0 10px rgba(31, 95, 160, 0.5), 0 0 20px rgba(32, 169, 232, 0.5);
+        }
+
+        .return-button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient button */
+            color: #121212; /* Button text color */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+            margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
+        }
+
+        .return-button:hover {
+            background-color: #00ffcc; /* Lighter button color on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 15px #1F5FA0, 0 0 30px #20A9E8; }
+            100% { text-shadow: 0 0 30px #1F5FA0, 0 0 45px #20A9E8; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Dev Panel</h1>
+    <a href="index.html"><button class="return-button">Return to Main Page</button></a>
+</body>
+</html>
