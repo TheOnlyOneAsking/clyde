@@ -204,14 +204,14 @@
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         activateButton.addEventListener('click', () => {
-            aiOutput.textContent = "Clyde is listening... Say 'Clyde' to start.";
+            speak("Clyde is listening... Say 'Clyde' to start.";
             activateButton.style.display = 'none';
             startClyde();
         });
 
         function startClyde() {
             if (!SpeechRecognition) {
-                aiOutput.textContent = 'Speech recognition is not supported in this browser.';
+                speak('Speech recognition is not supported in this browser.';
                 return;
             }
 
@@ -230,7 +230,7 @@
 
             recognition.onerror = function (event) {
                 console.error('Error occurred in speech recognition:', event);
-                aiOutput.textContent = 'Error occurred during speech recognition.';
+                speak('Error occurred during speech recognition.';
             };
 
             recognition.start();
@@ -278,7 +278,7 @@
                     if (youtubeQuery) {
                         window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeQuery)}`, "_blank");
                         speak(`Searching YouTube for "${youtubeQuery}"...`);
-                        aiOutput.textContent = `Searching YouTube for "${youtubeQuery}"...`;
+                        speak(`Searching YouTube for "${youtubeQuery}"...`;
                     } else {
                         speak("I didn't catch what you wanted to search.");
                     }
@@ -287,14 +287,14 @@
                 const query = transcript.replace("solve", "").trim();
                 try {
                     const result = eval(query);  // This evaluates the math expression
-                    aiOutput.textContent = `The answer is ${result}.`;
+                    speak(`The answer is ${result}.`);
                 } catch (error) {
-                    aiOutput.textContent = `Sorry, I couldn't solve that.`;
+                    speak(`Sorry, I couldn't solve that.`);
                 }
             } else if (transcript.includes("search")) { 
                 const query = transcript.replace("clyde", "").replace("search", "").trim();
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
-                aiOutput.textContent = `Searching for "${query}"...`;
+                speak(`Searching for "${query}"...`);
             } else if (transcript.includes("quit")) {
                 speak("Quitting");
                 window.close();
@@ -329,9 +329,9 @@
                 if (song) {
                     const query = encodeURIComponent(song);
                     window.open(`https://open.spotify.com/search/${query}`, "_blank");
-                    aiOutput.textContent = `Playing "${song}" on Spotify...`;
+                    speak(`Playing "${song}" on Spotify...`);
                 } else {
-                    aiOutput.textContent = "Okay, no song selected.";
+                    speak("Okay, no song selected.");
                 }
             } else if (transcript.includes("set alarm")) {
                 speak("Alarm set for 7:00 AM.");
