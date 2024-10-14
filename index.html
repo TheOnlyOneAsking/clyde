@@ -204,14 +204,14 @@
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         activateButton.addEventListener('click', () => {
-            speak("Clyde is listening... Say 'Clyde' to start.";
+            speak("Clyde is listening... Say 'Clyde' to start.");
             activateButton.style.display = 'none';
             startClyde();
         });
 
         function startClyde() {
             if (!SpeechRecognition) {
-                speak('Speech recognition is not supported in this browser.';
+                speak('Speech recognition is not supported in this browser.');
                 return;
             }
 
@@ -230,7 +230,7 @@
 
             recognition.onerror = function (event) {
                 console.error('Error occurred in speech recognition:', event);
-                speak('Error occurred during speech recognition.';
+                speak('Error occurred during speech recognition.');
             };
 
             recognition.start();
@@ -278,7 +278,7 @@
                     if (youtubeQuery) {
                         window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeQuery)}`, "_blank");
                         speak(`Searching YouTube for "${youtubeQuery}"...`);
-                        speak(`Searching YouTube for "${youtubeQuery}"...`;
+                        speak(`Searching YouTube for "${youtubeQuery}"...`);
                     } else {
                         speak("I didn't catch what you wanted to search.");
                     }
