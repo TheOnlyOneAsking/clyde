@@ -150,33 +150,6 @@
             }
         }
 
-        .activate-button {
-            margin-top: 40px;
-            padding: 5px 15px; /* Reduced padding for a smaller button */
-            font-size: 20px;
-            font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            background-color: #121212 ;
-            color: #ffffff;
-            border-style: solid; 
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: auto; /* Set to auto to prevent stretching */
-            max-width: 200px; /* Set a maximum width to prevent it from getting too wide */
-            display: block; /* Set to block for centering */
-            margin-left: auto; /* Center the button horizontally */
-            margin-right: auto; /* Center the button horizontally */
-        }
-
-        .activate-button:hover {
-            background-color: #00ffcc; /* Lighter button color on hover */
-            transform: translateY(-2px); /* Lift effect on hover */
-        }
-        
-
     </style>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -191,11 +164,8 @@
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
-    <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>
-
-    <button class="activate-button" id="activateButton">Activate Clyde</button>
-      
-
+    <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>      
+    
     <script>
                 navigator.mediaDevices.getUserMedia({ audio: true })
             .then(stream => {
@@ -206,16 +176,11 @@
             });
 
         const aiOutput = document.getElementById('aiOutput');
-        const activateButton = document.getElementById('activateButton');
 
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-        activateButton.addEventListener('click', () => {
-            speak("Clyde is listening... Say 'Clyde' to start.");
-            activateButton.style.display = 'none';
-            startClyde();
-        });
-
+        startClyde()
+        
         function startClyde() {
             if (!SpeechRecognition) {
                 speak('Speech recognition is not supported in this browser.');
