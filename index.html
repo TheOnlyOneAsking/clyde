@@ -68,17 +68,16 @@
 
         button {
             padding: 12px 25px;
-            background: linear-gradient(135deg, #1F5FA0, #20A9E8); /* Gradient button */
             color: #121212; /* Button text color */
             border: none;
             border-radius: 8px; /* Rounded corners */
             cursor: pointer;
-            font-size: 18px; /* Increased font size */
+            font-size: 25px; /* Increased font size */
             transition: background-color 0.3s ease, transform 0.3s ease; /* Transition effects */
         }
 
         button:hover {
-            background-color: #00ffcc; /* Lighter button color on hover */
+            background-color: #0084ff; /* Lighter button color on hover */
             transform: translateY(-2px); /* Lift effect on hover */
         }
 
@@ -150,6 +149,37 @@
             }
         }
 
+        .login-button {
+            font-family: "Outfit", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            box-shadow: 0 0 14px #1b6be3;
+            position: absolute;
+            top: 20px; /* Adjust this value to change the vertical position */
+            right: 20px; /* Adjust this value to change the horizontal position */
+            padding: 10px 20px;
+            background-color: #1488fc;
+            color: #ffffff; /* Text color */
+            border: none;
+            animation: glow 1.5s infinite alternate;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+        }
+        
+        .username-display {
+            font-family: "Outfit", sans-serif;
+            font-weight: 600;
+            position: absolute;
+            top: 20px; /* Adjust this value to change the vertical position */
+            right: 20px; /* Adjust this value to change the horizontal position */
+            color: #ffffff; /* Text color */
+            font-size: 16px;
+        }
+
     </style>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -164,9 +194,34 @@
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
-    <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>      
-    
+    <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>
+    <button class = "login-button" id="loginBtn" onclick="redirectToLogin()">Login</button>
+    <div id="usernameDisplay" class="username-display" style="display: none;"></div> <!-- Hidden by default -->
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if the user is logged in
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            
+            console.log("isLoggedIn:", isLoggedIn); // Log the login state
+    
+            // Show or hide elements based on login status
+            if (isLoggedIn) {
+                // Hide the login button
+                const loginBtn = document.getElementById('loginBtn');
+                if (loginBtn) {
+                    loginBtn.style.display = 'none'; // Hide login button
+                }
+    
+            }
+        });
+    
+        // Function to redirect to login page
+        function redirectToLogin() {
+            window.location.href = "login.html";
+        }
+    
+
+        // Check if user is logged in
                 navigator.mediaDevices.getUserMedia({ audio: true })
             .then(stream => {
                 // Microphone access granted
@@ -421,6 +476,16 @@
             // Ensure the voice is stored or accessible for future use
             if (britishMaleVoice) {
                 // Optionally store or configure it here
+            }
+        };
+        
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const loginButton = document.getElementById('loginButton');
+
+            if (isLoggedIn === 'true') {
+                // Hide the login button if the user is logged in
+                loginButton.style.display = 'none';
             }
         };
 
