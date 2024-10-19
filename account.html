@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .account-container {
+            background-color: #1F5FA0;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .profile-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        .profile-image input[type="file"] {
+            margin-top: 10px;
+        }
+
+        .change-password {
+            margin-top: 20px;
+        }
+
+        .change-password input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #20A9E8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px; /* Added margin for better spacing */
+        }
+    </style>
+</head>
+<body>
+
+<div class="account-container">
+    <div class="profile-image">
+        <img src="profile.png" id="profileImage" alt="Profile Image">
+        <input type="file" id="uploadImage" accept="image/*" onchange="changeProfileImage()">
+        <button id="saveImageButton" onclick="saveProfileImage()" style="display: none;">Save Profile Image</button>
+    </div>
+
+    <div class="change-password">
+        <h3>Change Password</h3>
+        <input type="password" id="oldPassword" placeholder="Old Password" required>
+        <input type="password" id="newPassword" placeholder="New Password" required>
+        <button onclick="changePassword()">Change Password</button>
+    </div>
+</div>
+
+<script>
+    // Load the profile image from localStorage when the page loads
+    window.onload = function() {
+        const savedImage = localStorage.getItem('profileImage');
+        if (savedImage) {
+            document.getElementById('profileImage').src = savedImage;
+        }
+    };
+
+    function changeProfileImage() {
+        const fileInput = document.getElementById('uploadImage');
+        const profileImage = document.getElementById('profileImage');
+        const saveImageButton = document.getElementById('saveImageButton');
+
+        if (fileInput.files && fileInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profileImage.src = e.target.result; // Update the image source to the uploaded file
+                saveImageButton.style.display = 'block'; // Show the save button
+            }
+            reader.readAsDataURL(fileInput.files[0]); // Read the uploaded file
+        } else {
+            profileImage.src = 'profile.png'; // Reset to default if no file is selected
+            saveImageButton.style.display = 'none'; // Hide the save button
+        }
+    }
+
+    function saveProfileImage() {
+        const profileImage = document.getElementById('profileImage').src;
+        localStorage.setItem('profileImage', profileImage); // Save the image to localStorage
+        alert("Profile image saved successfully!");
+    }
+
+    function changePassword() {
+        const oldPassword = document.getElementById('oldPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const email = localStorage.getItem('loginEmail');
+
+        const storedPassword = localStorage.getItem(email);
+        if (storedPassword === oldPassword) {
+            localStorage.setItem(email, newPassword);
+            alert("Password changed successfully!");
+        } else {
+            alert("Old password is incorrect.");
+        }
+    }
+</script>
+
+</body>
+</html>

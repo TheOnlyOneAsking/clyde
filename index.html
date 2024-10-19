@@ -9,6 +9,7 @@
     })(window,document,'script','dataLayer','GTM-MPTXKCV8');</script>
     <!-- End Google Tag Manager -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clyde AI</title>
@@ -170,15 +171,53 @@
             
         }
         
-        .username-display {
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
+        #profile-btn {
             position: absolute;
-            top: 20px; /* Adjust this value to change the vertical position */
-            right: 20px; /* Adjust this value to change the horizontal position */
-            color: #ffffff; /* Text color */
-            font-size: 16px;
+            top: 20px; /* Adjust to fit your layout */
+            right: 20px; /* Adjust to fit your layout */
+            display: none; /* Hidden until logged in */
+            cursor: pointer;
         }
+
+        #profile-btn img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* Circular image */
+            box-shadow: 0 0 14px #1b6be3;
+        }
+
+        /* Make the dropdown appear when hovering over the entire profile button area */
+        #profile-btn:hover .dropdown, 
+        #profile-btn .dropdown:hover {
+            display: block;
+        }
+
+        #profile-btn .dropdown {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 0; /* Position below the profile image */
+            right: 70px;
+            background-color: #1F5FA0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        #profile-btn .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-style: normal;        }
+
+        #profile-btn .dropdown a:hover {
+            background-color: #2080c3;
+            box-shadow: 0 4px 12px rgba(31, 95, 160, 0.5);
+        }
+
 
     </style>
 <body>
@@ -195,8 +234,16 @@
         <div class="wave"></div>
     </div>
     <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>
-    <button class = "login-button" id="loginBtn" onclick="redirectToLogin()">Login</button>
-    <div id="usernameDisplay" class="username-display" style="display: none;"></div> <!-- Hidden by default -->
+    <button class = "login-button" id="profileBtn" onclick="redirectToLogin()":localStorage.removeItem('loginEmail');"">Login</button>
+    <div id="profile-btn">
+        <img src="profile.png" alt="Profile" id="profile-img">
+        <div class="dropdown">
+            <a href="account.html">My Account</a>
+            <a href="login.html" onclick="localStorage.setItem('isLoggedIn', 'false');
+            localStorage.removeItem('loginEmail');">Logout</a>
+        </div>
+    </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Check if the user is logged in
@@ -204,12 +251,36 @@
             
             console.log("isLoggedIn:", isLoggedIn); // Log the login state
     
+        // Function to handle the logout process
+        // Logout function to clear login state
+        function logout() {
+            localStorage.setItem('isLoggedIn', 'false');  // Set login state to false
+            localStorage.removeItem('loginEmail');        // Optionally remove the logged-in email
+            alert("Logged out successfully!");
+            window.location.href = 'login.html';          // Redirect to login page
+        }
+    
+        // Function to display profile button only if logged in
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const profileBtn = document.getElementById('profile-btn');
+    
+            console.log('isLoggedIn:', isLoggedIn); // Debugging log
+    
+            // Check if user is logged in
+            if (isLoggedIn === 'true') {
+                profileBtn.style.display = 'block';  // Show profile button
+            } else {
+                profileBtn.style.display = 'none';   // Hide profile button
+            }
+        };
+    
             // Show or hide elements based on login status
             if (isLoggedIn) {
                 // Hide the login button
-                const loginBtn = document.getElementById('loginBtn');
-                if (loginBtn) {
-                    loginBtn.style.display = 'none'; // Hide login button
+                const profileBtn = document.getElementById('profileBtn');
+                if (profileBtn) {
+                    profileBtn.style.display = 'none'; // Hide login button
                 }
     
             }
