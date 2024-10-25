@@ -3,163 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
-    <title>Sign Up - Clyde</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            width: 800px;
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 12px 24px #1F5FA0, 
-                        0 8px 16px #1F5FA0; /* Added a deeper shadow effect */
-
-        }
-
-        .signup-section {
-            flex: 1;
-            background: linear-gradient(135deg, #1F5FA0, #20A9E8);
-            color: #fff;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .signup-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .signup-section p {
-            margin-bottom: 30px;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .signup-form input {
-            width: 100%;
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .signup-btn {
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
-            width: 100%;
-            padding: 12px;
-            background-color: #FFF;
-            border: none;
-            color: #1F5FA0;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .signup-btn:hover {
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
-        }
-
-        .already-account-section {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .already-account-section h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .already-account-section p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            color: #666;
-        }
-
-        .login-link-btn {
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
-            padding: 12px 20px;
-            background-color: #1F5FA0;
-            color: #ffffff;
-            border: none;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .login-link-btn:hover {
-            background-color: #2080c3;
-            box-shadow: 0 4px 12px rgba(31, 95, 160, 0.5);
-        }
-    </style>
+    <title>Signup to Clyde - Your Favorite Virtual Assistant</title>
 </head>
 <body>
     <div class="container">
-        <div class="signup-section">
-            <h2>Create a New Account</h2>
-            <form class="signup-form">
-                <input type="email" id="signup-email" placeholder="Email" required>
-                <input type="password" id="signup-password" placeholder="Password" required>
-                <button type="button" class="signup-btn" onclick="signup()">Sign Up</button>
-            </form>
+            <div class="signup-section">
+                <h2>Make an account</h2>
+                <form class="signup-form" onsubmit="return false;">
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <button type="button" class="signup-btn" onclick="signup()">Signup</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </div>
+            <div class="already-been-here-section">
+                <h2>Already Been Here?</h2>
+                <p>Sign in to access clyde.ai</p>
+                <button class="signup-link-btn" onclick="redirectToLogin()">Login</button>
+            </div>
         </div>
-        <div class="already-account-section">
-            <h2>Already have an account?</h2>
-            <p>Login here to go straight to Clyde!</p>
-            <button class="login-link-btn" onclick="redirectToLogin()">Log In</button>
-        </div>
-    </div>
+    
 
     <script>
+
         function signup() {
             const email = document.getElementById('signup-email').value;
             const password = document.getElementById('signup-password').value;
 
-            // Store user details in localStorage
+            // Check if the email is already registered
             if (localStorage.getItem(email)) {
                 alert("This email is already registered.");
             } else {
+                // Store user details in localStorage
                 localStorage.setItem(email, password);
-                window.location.href = "login.html"; // Redirect to login page
+                // Redirect to signup page
+                window.location.href = "login.html"; 
             }
         }
 
         function redirectToLogin() {
             window.location.href = "login.html";
         }
+
     </script>
 </body>
 </html>

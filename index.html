@@ -8,244 +8,13 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MPTXKCV8');</script>
     <!-- End Google Tag Manager -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clyde AI</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-            font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    
-        /* Main container for both panels */
-        .container {
-            display: flex;
-            width: 90%;
-            max-width: 1200px;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-    
-        /* Clyde AI Panel */
-        .clyde-panel {
-            width: 100%;
-            background-color: #121212;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 0 50px #ffffff;
-            flex: auto;
-        }
-    
-        .logo {
-            font-size: 130px;
-            margin-top: 50px;
-            background: linear-gradient(135deg, #007bff, #007bff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            text-shadow: 0 0 14px #1b6be3;
-
-        }
-    
-        .ai-output {
-            margin-top: 30px;
-            font-size: 40px;
-            color: #ffffff;
-            text-shadow: 0 0 14px #1b6be3;
-            transition: transform 0.2s ease-in-out;
-        }
-    
-        .wave-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
-    
-        .wave {
-            width: 20px;
-            height: 80px;
-            margin: 0 6px;
-            background-color: #fff;
-            animation: wave 1s infinite ease-in-out;
-        }
-    
-        .wave:nth-child(2) {
-            animation-delay: -0.4s;
-        }
-    
-        .wave:nth-child(3) {
-            animation-delay: -0.6s;
-        }
-    
-        .wave:nth-child(4) {
-            animation-delay: -0.8s;
-        }
-    
-    
-    
-        @keyframes wave {
-            0%, 40%, 100% {
-                transform: scaleY(0.4);
-            }
-            20% {
-                transform: scaleY(1);
-            }
-        }
-    
-        .login-button {
-            font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            box-shadow: 0 0 14px #1b6be3;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #1488fc;
-            color: #ffffff;
-            border: none;
-            animation: glow 1.5s infinite alternate;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-    
-        #profile-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: none;
-            cursor: pointer;
-        }
-    
-        #profile-btn img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 0 14px #1b6be3;
-        }
-    
-        #profile-btn:hover .dropdown, 
-        #profile-btn .dropdown:hover {
-            display: block;
-        }
-    
-        #profile-btn .dropdown {
-            display: none;
-            position: absolute;
-            top: 0;
-            right: 70px;
-            background-color: #1F5FA0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            z-index: 10;
-            overflow: hidden;
-        }
-    
-        #profile-btn .dropdown a {
-            display: block;
-            padding: 10px 20px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-    
-        #profile-btn .dropdown a:hover {
-            background-color: #2080c3;
-            box-shadow: 0 4px 12px rgba(31, 95, 160, 0.5);
-        }
-    
-        /* New Panel on the Right */
-        .new-panel {
-            width: 45%;
-            right: auto;
-            flex: auto;
-            margin: 40px; /* Adds space between panels */
-            background-color: #1b6be3;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 30px #ffffff;
-        }
-    
-        .new-panel h2 {
-            font-size: 32px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-    
-        .new-panel-content {
-            font-size: 18px;
-            color: #fff;
-            line-height: 1.5;
-        }
-    
-        .new-panel-content button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #20A9E8;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-    
-        .new-panel-content button:hover {
-            background-color: #1488fc;
-        }
-        .shortcuts {
-            text-align: center;
-        }
-
-        .shortcuts h3 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #ffffff;
-        }
-
-        .shortcut {
-            display: inline-block;
-            padding: 15px 25px; /* Vertical and horizontal padding */
-            margin: 10px; /* Margin between buttons */
-            background-color: #007bff; /* Button color */
-            color: #ffffff; /* Text color */
-            border-radius: 5px; /* Rounded corners */
-            text-decoration: none; /* No underline */
-            font-size: 16px; /* Text size */
-            transition: background-color 0.3s, transform 0.2s; /* Transitions for hover effect */
-        }
-
-        .shortcut:hover {
-            background-color: #0056b3; /* Darker color on hover */
-            transform: translateY(-2px); /* Slight lift effect on hover */
-        }
-
-        .shortcut:active {
-            transform: translateY(1px); /* Slight press effect on click */
-        }
-        
-        
-    </style>
-    
+    <title>Clyde - Your Favorite Virtual Assistant</title>
     <body>
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPTXKCV8"
@@ -253,357 +22,571 @@
         <!-- End Google Tag Manager (noscript) -->
     
         <div class="container">
-            <!-- Clyde Panel on the Left -->
-            <div class="clyde-panel">
-                <div class="logo">clyde.ai</div>
-                <div class="wave-container">
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
+            <div class="app-wrapper">
+                <div class="main-content">
+                    <div class="main-content__header">
+                        <div class="header__inner">
+                            <a href="javascript:void(0)" class="icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                            <h1>clyde.ai</h1>
+                        </div>
+                    </div>
+        
+                    <div class="main-content__body">
+                        <form id="search-form" onsubmit="return searchGoogle()">
+                            <div class="input-field-group">
+                                <input type="text" class="main-search-input" id="search-input" placeholder="Search" required>
+                            </div>
+                            <button type="submit" style="display: none;"></button> <!-- Hidden button to trigger form submission -->
+                        </form>
+        
+                        <div class="trending-list">
+                            <div class="flex-vert">
+                                <a href="https://twitter.com/explore/tabs/trending" target="_blank" class="card card__outlined card__centered-text">Trends</a>
+                                <a href="https://twitter.com/explore/tabs/trending" class="card card__image" style="background-image: url(https://images.unsplash.com/photo-1558981822-0c0c5b070026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></a>
+                            </div>
+                            <div class="big-block">
+                                <a href="https://www.tasteofhome.com/collection/top-10-breakfast-recipes/" target="_blank" class="card card__white-bg card__lg-sq card__centered-text">
+                                    <div class="centered-text-content">
+                                        <div class="emoji-lg emoji-mb20">🍳</div>
+                                        <div class="card__text"><span>10 recipes</span><br>for perfect breakfasts</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="flex-vert">
+                                <div class="flex-horz">
+                                    <a href="https://giphy.com/explore/cat-meme" class="card card__image" style="background-image: url(https://images.unsplash.com/photo-1562569633-622303bafef5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></a>
+                                    <a href="https://giphy.com/explore/cat-meme" target="_blank" class="card card__white-bg card__centered-text">Cat Memes</a>
+                                </div>
+                                <div class="">
+                                    <a href="https://emergencycompliment.com/#" class="card card__rect card__lt-blue-bg flex-horz" target="_blank">
+                                        <div class="emoji-sm emoji-mr20">🔥</div>
+                                        <div class="card__text">You‘re<br><span>Breathtaking</span></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explore-section">
+                            <h2>Explore</h2>
+                            <div class="explore-section__heading">
+                                <div class="explore-nav">
+                                    <a href="javascript:void(0)" class="selected">All</a>
+                                    <a href="javascript:void(0)">Images</a>
+                                    <a href="javascript:void(0)">Videos</a>
+                                    <a href="javascript:void(0)">News</a>
+                                    <a href="javascript:void(0)">Events</a>
+                                </div>
+        
+                                <a href="javascript:void(0)" class="filter-toggle">
+                                    <div class="filter-icon">
+                                        <span class="circle"></span>
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                        <span class="circle"></span>
+                                    </div>
+                                </a>
+                            </div>
+        
+                            <div class="explore-section__list">
+                                <a href="javascript:void(0)" class="card card__white-bg card__link">
+                                    <div class="avatar" style="background-image: url(https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80)"></div>
+                                    <div class="card__text"><span>Design<br>Awards</span></div>
+                                </a>
+                                <a href="javascript:void(0)" class="card card__image card__tall" style="background-image: url(https://images.unsplash.com/photo-1562736171-c8150ae67a5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);">
+                                    <div class="card__button"><span>Architecture</span></div>
+                                </a>
+                                <a href="javascript:void(0)" class="card card__white-bg card__link">
+                                    <div class="avatar" style="background-image: url(https://www.cordobaguitars.com/wp-content/uploads/2018/12/Untitled-1-2000x1200.jpg)"></div>
+                                    <div class="card__text"><span>Cordoba<br>Guitars</span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ai-output" id="aiOutput">Say "Clyde" before your command to start.</div>
-                <button class="login-button" id="profileBtn" onclick="redirectToLogin()">Login</button>
-            </div>
-    
-            <!-- New Panel on the Right -->
-            <div class="new-panel">
-                <h2>Your Panel</h2>
-                <div class="shortcuts">
-                    <h3>Shortcuts</h3>
-                    <a class="shortcut" href="https://www.google.com" target="_blank" >Google</a>
-                    <a class="shortcut" href="https://www.github.com" target="_blank" >GitHub</a>
-                    <a class="shortcut" href="https://www.stackoverflow.com" target="_blank" >Stack Overflow</a>
+        
+                <div class="account-panel">
+                    <div class="account-panel__resizer"></div>
+                    <div class="account-panel__inner">
+                        <div class="account-panel__content">
+                            <div class="account-header">
+                                <div class="account-header__nav">
+                                    <a href="login.html">Profile</a>
+                                    <a href="account.html">Settings</a>
+                                </div>
+                                <a href="index.html" class="user-avatar"></a>
+                            </div>
+        
+                            <div class="account-content">
+                                <h2>Hello, <span id="greeting">Guest</span><div class="notification-badge">42</div></h2>
+                                <div class="account-card-list">
+                                    <a href="reminders.html" class="card card__image card__tall" style="background-image: url(https://images.unsplash.com/photo-1558237316-d4762d4b8ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);">
+                                        <div class="card__button">Get <span style="margin-left: 2px">Glasses</span></div>
+                                    </a>
+                                    <a href="https://www.google.com/search?q=weather" target = "_blank" class="card card__off-white-bg card__lg-sq card__centered-text">
+                                        <div class="centered-text-content">
+                                            <div class="card__text">Check the <span>weather</span></div>
+                                            <div class="emoji-md emoji-mt20">☂️</div>
+                                        </div>
+                                    </a>
+                                </div>
+        
+                                <div class="now-playing">
+                                    <h3>Now Playing</h3>
+                                    <div class="songs-list">
+                                        <div class="card card__player card__lt-lightblue-bg">
+                                            <div class="album-artwork" style="background-image: url(https://images.genius.com/74622f434a6e852420ea522d6aae36f1.1000x1000x1.jpg)"></div>
+                                            <div class="song-info">
+                                                <div class="song-title">No Song Playing</div>
+                                                <div class="song-artist">No Artist</div>
+                                            </div>
+                                            <a id="pauseButton" class="control-icon" onclick="toggleAudio()">
+                                                <span></span>
+                                                <span></span>
+                                            </a>
+                                        </div>
+                                        <a class="card card__player card__next-song">
+                                            <div class="song-info">
+                                                <div class="song-title">No Song</div>
+                                                <div class="song-artist">No Artist</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="account-pagination">
+                                    <div class="pagination-list">
+                                        <a href="javascript:void(0)" class="selected"><span></span></a>
+                                        <a href="javascript:void(0)"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    
-        <div id="profile-btn">
-            <img src="profile.png" alt="Profile" id="profile-img">
-            <div class="dropdown">
-                <a href="account.html">My Account</a>
-                <a href="login.html" onclick="localStorage.setItem('isLoggedIn', 'false'); localStorage.removeItem('loginEmail');">Logout</a>
             </div>
         </div>
     </body>
-    
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check if the user is logged in
-            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            
-            console.log("isLoggedIn:", isLoggedIn); // Log the login state
-    
-        // Function to handle the logout process
-        // Logout function to clear login state
-        function logout() {
-            localStorage.setItem('isLoggedIn', 'false');  // Set login state to false
-            localStorage.removeItem('loginEmail');        // Optionally remove the logged-in email
-            alert("Logged out successfully!");
-            window.location.href = 'login.html';          // Redirect to login page
-        }
-    
-        // Function to display profile button only if logged in
-        window.onload = function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const profileBtn = document.getElementById('profile-btn');
-    
-            console.log('isLoggedIn:', isLoggedIn); // Debugging log
-    
-            // Check if user is logged in
-            if (isLoggedIn === 'true') {
-                profileBtn.style.display = 'block';  // Show profile button
-            } else {
-                profileBtn.style.display = 'none';   // Hide profile button
+        
+        <script>
+            function searchGoogle() {
+                const query = document.getElementById('search-input').value;
+                const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                window.open(url, '_blank');
+                return false; // Prevent form submission
             }
-        };
-    
-            // Show or hide elements based on login status
-            if (isLoggedIn) {
-                // Hide the login button
-                const profileBtn = document.getElementById('profileBtn');
-                if (profileBtn) {
-                    profileBtn.style.display = 'none'; // Hide login button
+        
+            let isPlaying = false; // Track audio state
+            const audio = new Audio(); // Create an audio object
+        
+            function toggleAudio() {
+                if (isPlaying) {
+                    audio.pause(); // Pause the audio
+                    document.querySelector('.song-title').innerText = 'No Song Playing'; // Update UI
+                    document.querySelector('.song-artist').innerText = 'No Artist';
+                } else {
+                    audio.src = 'your-audio-file-url.mp3'; // Replace with your audio file URL
+                    audio.play(); // Play the audio
+                    audio.onplaying = function() {
+                        document.querySelector('.song-title').innerText = 'Your Song Title'; // Update UI
+                        document.querySelector('.song-artist').innerText = 'Your Song Artist';
+                    };
                 }
-    
+                isPlaying = !isPlaying; // Toggle the state
             }
-        });
-    
-        // Function to redirect to login page
-        function redirectToLogin() {
-            window.location.href = "login.html";
+        </script>
+
+    <script>
+            (() => {
+        const mainContent = document.querySelector('.main-content');
+        const accountPanel = document.querySelector('.account-panel');
+        const resizer = accountPanel.querySelector('.account-panel__resizer');
+        const panelContent = accountPanel.querySelector('.account-panel__content');
+        // Retrieve loginEmail from localStorage
+        const loginEmail = localStorage.getItem('loginEmail');
+        document.getElementById("greeting").textContent = loginEmail ? loginEmail : "Guest";
+        // Function to pause all media elements
+        function pauseAllMedia() {
+            // Get all audio and video elements in the document
+            const mediaElements = document.querySelectorAll('audio, video');
+            
+            // Loop through each element and pause it
+            mediaElements.forEach(media => {
+                if (!media.paused) {
+                    media.pause();
+                }
+            });
         }
-    
+
+        // Add event listener to the pause button
+        document.getElementById('pauseButton').addEventListener('click', pauseAllMedia);
+        let isDragging = false;
+        
+    // Function to handle search input
+        function handleSearchInput(event) {
+            const searchTerm = event.target.value; // Get the current value of the input
+            if (searchTerm) {
+                // Redirect to Google search with the search term
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+        // Add event listener to the search form
+        const searchForm = document.querySelector('.main-content__body form'); // Select the form element
+        searchForm.addEventListener('submit', handleSearchInput); // Attach the handleSearchInput function to the submit event
+
+        
+        const handleResizerMouseDown = (e) => {
+            e.preventDefault();
+            isDragging = true;
+            
+            mainContent.style.filter = 'blur(24px)';
+            panelContent.style.filter = 'blur(24px)';
+        };
+        
+        const handleResizerMouseUp = () => {
+            isDragging = false;
+            
+            mainContent.style.filter = '';
+            panelContent.style.filter = '';
+        };
+        
+        resizer.addEventListener('mousedown', handleResizerMouseDown);
+        resizer.addEventListener('mouseup', handleResizerMouseUp);
+        resizer.addEventListener('mouseout', handleResizerMouseUp);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                focusOnSearchInput();
+            }, 600);
+        });
+    })();
+
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        // Retrieve the user's email from localStorage
+        const loginEmail = localStorage.getItem('loginEmail');
+
+        // Find the heading element and update its text content
+        const headingElement = document.getElementById('myHeading');
+        if (loginEmail) {
+            headingElement.textContent = `Hello, ${loginEmail}`;
+        } else {
+            headingElement.textContent = 'Hello, Guest'; // Fallback if no email is stored
+        }
+        
+        console.log("isLoggedIn:", isLoggedIn); // Log the login state
+
+    // Function to handle the logout process
+    // Logout function to clear login state
+    function logout() {
+        localStorage.setItem('isLoggedIn', 'false');  // Set login state to false
+        localStorage.removeItem('loginEmail');        // Optionally remove the logged-in email
+        alert("Logged out successfully!");
+        window.location.href = 'login.html';          // Redirect to login page
+    }
+
+    // Function to display profile button only if logged in
+    window.onload = function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const profileBtn = document.getElementById('profile-btn');
+
+        console.log('isLoggedIn:', isLoggedIn); // Debugging log
 
         // Check if user is logged in
-                navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(stream => {
-                // Microphone access granted
-            })
-            .catch(err => {
-                console.error('Error accessing microphone:', err);
+        if (isLoggedIn === 'true') {
+            profileBtn.style.display = 'block';  // Show profile button
+        } else {
+            profileBtn.style.display = 'none';   // Hide profile button
+        }
+    };
+
+        // Show or hide elements based on login status
+        if (isLoggedIn) {
+            // Hide the login button
+            const profileBtn = document.getElementById('profileBtn');
+            if (profileBtn) {
+                profileBtn.style.display = 'none'; // Hide login button
+            }
+
+        }
+    });
+
+    // Function to redirect to login page
+    function redirectToLogin() {
+        window.location.href = "login.html";
+    }
+
+
+    // Check if user is logged in
+            navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+            // Microphone access granted
+        })
+        .catch(err => {
+            console.error('Error accessing microphone:', err);
+        });
+
+    const aiOutput = document.getElementById('aiOutput');
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    startClyde()
+
+    function startClyde() {
+        if (!SpeechRecognition) {
+            speak('Speech recognition is not supported in this browser.');
+            return;
+        }
+
+        const recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+
+        recognition.onresult = function (event) {
+            const transcript = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+
+            if (transcript.includes("clyde")) {
+                handleCommand(transcript);
+            }
+        };
+
+        recognition.onerror = function (event) {
+            console.error('Error occurred in speech recognition:', event);
+            speak('Error occurred during speech recognition.');
+        };
+
+        recognition.start();
+    }
+
+    function handleCommand(transcript) {
+        if (transcript.includes("open youtube")) {
+            window.open("https://www.youtube.com", "_blank");
+            speak("Opening YouTube...");
+        } else if (transcript.includes("open gmail")) {
+            window.open("https://mail.google.com/mail/u/", "_blank");
+            speak("Opening Gmail...");
+        } else if (transcript.includes("open aspen")) {
+            window.open("https://ma-franklin.myfollett.com/aspen-login/?deploymentId=ma-franklin", "_blank");
+            speak("Opening Aspen...");
+        } else if (transcript.includes("open google classroom")) {
+            window.open("https://classroom.google.com/", "_blank");
+            speak("Opening Classroom...");
+        } else if (transcript.includes("open game")) {
+            window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
+            speak("Opening GeForceNow...");
+        } else if (transcript.includes("who made you")) {
+            speak("Vihaan Juneja, a 13 year old developer at Remington Middle School developed me in 2024.");
+        } else if (transcript.includes("open fidelity")) {
+            window.open("https://digital.fidelity.com/prgw/digital/login/full-page", "_blank");
+            speak("Opening Fidelity Investments...");
+        } else if (transcript.includes("open zoom")) {
+            window.open("https://www.zoom.com/", "_blank");
+            speak("Opening Zoom...");
+        } else if (transcript.includes("what's for lunch")) {
+            window.open("https://linqconnect.com/public/menu/U9RNQP?buildingId=fd7d57a2-273d-ea11-ba38-b2e93801c46d", "_blank");
+            speak("Opening Your Lunch Menu...");
+        } else if (transcript.includes("search youtube")) {
+            speak("What would you like me to search on YouTube?");
+        } else if (transcript.includes("open game")) {
+            window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
+            speak("Opening GeForceNow...");
+            
+            recognition.onresult = function (event) {
+                const youtubeQuery = event.results[event.results.length - 1][0].transcript.trim().toLowerCase().replace("clyde", "").replace("search youtube", "").trim();
+                
+                if (youtubeQuery) {
+                    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeQuery)}`, "_blank");
+                    speak(`Searching YouTube for "${youtubeQuery}"...`);
+                    speak(`Searching YouTube for "${youtubeQuery}"...`);
+                } else {
+                    speak("I didn't catch what you wanted to search.");
+                }
+            };
+        } else if (transcript.includes("solve")) {
+            const query = transcript.replace("solve", "").trim();
+            try {
+                const result = eval(query);  // This evaluates the math expression
+                speak(`The answer is ${result}.`);
+            } catch (error) {
+                speak(`Sorry, I couldn't solve that.`);
+            }
+        } else if (transcript.includes("search")) { 
+            const query = transcript.replace("clyde", "").replace("search", "").trim();
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
+            speak(`Searching for "${query}"...`);
+        } else if (transcript.includes("quit")) {
+            speak("Quitting");
+            window.close();
+        } else if (transcript.includes("send email")) {
+            speak("Who would you like to send the email to?");
+            const emailInputForm = document.createElement('form');
+            const inputField = document.createElement('input');
+            inputField.type = 'email';
+            inputField.placeholder = 'Enter recipient email';
+            inputField.id = 'recipientEmail';
+            
+            const submitButton = document.createElement('button');
+            submitButton.textContent = 'Send';
+            
+            emailInputForm.appendChild(inputField);
+            emailInputForm.appendChild(submitButton);
+            document.body.appendChild(emailInputForm);
+
+            emailInputForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const emailAddress = inputField.value;
+                if (emailAddress) {
+                    window.location.href = `mailto:${emailAddress}`;
+                    speak(`Sending an email to ${emailAddress}...`);
+                    document.body.removeChild(emailInputForm);  // Clean up after submission
+                } else {
+                    speak("Please provide a valid email address.");
+                }
+            });
+        } else if (transcript.includes("play music")) {
+            const song = prompt("What song would you like to play?");
+            if (song) {
+                const query = encodeURIComponent(song);
+                window.open(`https://open.spotify.com/search/${query}`, "_blank");
+                speak(`Playing "${song}" on Spotify...`);
+            } else {
+                speak("Okay, no song selected.");
+            }
+        } else if (transcript.includes("set alarm")) {
+            speak("Alarm set for 7:00 AM.");
+        } else if (transcript.includes("what's the weather in")) {
+            const location = transcript.split("in").pop().trim();
+            const weather = weatherData[location] || "Sorry, I don't have data for that location.";
+            speak(weather);
+        } else if (transcript.includes("find restaurants")) {
+            speak("Which location would you like me to search for restaurants in?");
+            recognition.onresult = function (event) {
+                const location = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+                if (location) {
+                    const url = `https://www.yelp.com/search?find_desc=restaurants&find_loc=${encodeURIComponent(location)}`;
+                    window.open(url, "_blank");
+                    speak(`Searching for restaurants in ${location}...`);
+                }
+            };
+        } else if (transcript.includes("play radio")) {
+            speak("Playing BBC Radio...");
+            window.open("https://www.bbc.co.uk/sounds/play/live:bbc_radio_one", "_blank");
+        } else if (transcript.includes("ask gpt") || transcript.includes("chatgpt")) {
+            const userQuery = transcript.replace("ask gpt", "").replace("chatgpt", "").trim();
+            
+            if (userQuery) {
+                speak("Let me ask ChatGPT for you...");
+                
+                // Call the GPT API
+                askGPT(userQuery).then(gptResponse => {
+                    // Clyde speaks the GPT response
+                    speak(gptResponse);
+                }).catch(error => {
+                    speak("Sorry, I couldn't connect to ChatGPT right now.");
+                    console.error("Error connecting to GPT:", error);
+                });
+            } else {
+                speak("Please tell me what to ask ChatGPT.");
+            }
+        } else {
+            speak("Yes, How may I assist you?");
+        }
+
+        aiOutput.textContent = transcript;
+    }
+
+    async function askGPT(prompt) {
+        const apiKey = "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";  // Use your actual OpenAI API key
+        const url = "https://api.openai.com/v1/chat/completions"; // Update to use chat/completions endpoint
+        
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",  // Specify model
+                    messages: [
+                        { "role": "system", "content": "You are a helpful assistant." }, 
+                        { "role": "user", "content": prompt }
+                    ],
+                    max_tokens: 100,  // Adjust as necessary
+                })
             });
 
-        const aiOutput = document.getElementById('aiOutput');
-
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-        startClyde()
-        
-        function startClyde() {
-            if (!SpeechRecognition) {
-                speak('Speech recognition is not supported in this browser.');
-                return;
+            // Check if the response was successful
+            if (!response.ok) {
+                const errorDetails = await response.json(); // Get error details from response
+                console.error(`Error: Network response was not ok. Status: ${response.status}, Status Text: ${response.statusText}, Details: ${JSON.stringify(errorDetails)}`);
+                throw new Error(`Network response was not ok: ${response.statusText} - ${errorDetails.message}`);
             }
 
-            const recognition = new SpeechRecognition();
-            recognition.continuous = true;
-            recognition.interimResults = false;
-            recognition.lang = 'en-US';
+            const data = await response.json();
 
-            recognition.onresult = function (event) {
-                const transcript = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
-
-                if (transcript.includes("clyde")) {
-                    handleCommand(transcript);
-                }
-            };
-
-            recognition.onerror = function (event) {
-                console.error('Error occurred in speech recognition:', event);
-                speak('Error occurred during speech recognition.');
-            };
-
-            recognition.start();
-        }
-
-        function handleCommand(transcript) {
-            if (transcript.includes("open youtube")) {
-                window.open("https://www.youtube.com", "_blank");
-                speak("Opening YouTube...");
-            } else if (transcript.includes("open gmail")) {
-                window.open("https://mail.google.com/mail/u/", "_blank");
-                speak("Opening Gmail...");
-            } else if (transcript.includes("open aspen")) {
-                window.open("https://ma-franklin.myfollett.com/aspen-login/?deploymentId=ma-franklin", "_blank");
-                speak("Opening Aspen...");
-            } else if (transcript.includes("open google classroom")) {
-                window.open("https://classroom.google.com/", "_blank");
-                speak("Opening Classroom...");
-            } else if (transcript.includes("open game")) {
-                window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
-                speak("Opening GeForceNow...");
-            } else if (transcript.includes("who made you")) {
-                speak("Vihaan Juneja, a 13 year old developer at Remington Middle School developed me in 2024.");
-            } else if (transcript.includes("open fidelity")) {
-                window.open("https://digital.fidelity.com/prgw/digital/login/full-page", "_blank");
-                speak("Opening Fidelity Investments...");
-            } else if (transcript.includes("roses are red violets are blue i am a robot and so are you")) {
-                speak("Hello Master Vihaan, Opening your panel...");
-                window.location.href = 'devpanel.html', "_blank";
-            } else if (transcript.includes("open zoom")) {
-                window.open("https://www.zoom.com/", "_blank");
-                speak("Opening Zoom...");
-            } else if (transcript.includes("what's for lunch")) {
-                window.open("https://linqconnect.com/public/menu/U9RNQP?buildingId=fd7d57a2-273d-ea11-ba38-b2e93801c46d", "_blank");
-                speak("Opening Your Lunch Menu...");
-            } else if (transcript.includes("search youtube")) {
-                speak("What would you like me to search on YouTube?");
-            } else if (transcript.includes("open game")) {
-                window.open("https://play.geforcenow.com/mall/#/layout/games", "_blank");
-                speak("Opening GeForceNow...");
-                
-                recognition.onresult = function (event) {
-                    const youtubeQuery = event.results[event.results.length - 1][0].transcript.trim().toLowerCase().replace("clyde", "").replace("search youtube", "").trim();
-                    
-                    if (youtubeQuery) {
-                        window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(youtubeQuery)}`, "_blank");
-                        speak(`Searching YouTube for "${youtubeQuery}"...`);
-                        speak(`Searching YouTube for "${youtubeQuery}"...`);
-                    } else {
-                        speak("I didn't catch what you wanted to search.");
-                    }
-                };
-            } else if (transcript.includes("solve")) {
-                const query = transcript.replace("solve", "").trim();
-                try {
-                    const result = eval(query);  // This evaluates the math expression
-                    speak(`The answer is ${result}.`);
-                } catch (error) {
-                    speak(`Sorry, I couldn't solve that.`);
-                }
-            } else if (transcript.includes("search")) { 
-                const query = transcript.replace("clyde", "").replace("search", "").trim();
-                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
-                speak(`Searching for "${query}"...`);
-            } else if (transcript.includes("quit")) {
-                speak("Quitting");
-                window.close();
-            } else if (transcript.includes("send email")) {
-                speak("Who would you like to send the email to?");
-                const emailInputForm = document.createElement('form');
-                const inputField = document.createElement('input');
-                inputField.type = 'email';
-                inputField.placeholder = 'Enter recipient email';
-                inputField.id = 'recipientEmail';
-                
-                const submitButton = document.createElement('button');
-                submitButton.textContent = 'Send';
-                
-                emailInputForm.appendChild(inputField);
-                emailInputForm.appendChild(submitButton);
-                document.body.appendChild(emailInputForm);
-
-                emailInputForm.addEventListener('submit', (event) => {
-                    event.preventDefault();
-                    const emailAddress = inputField.value;
-                    if (emailAddress) {
-                        window.location.href = `mailto:${emailAddress}`;
-                        speak(`Sending an email to ${emailAddress}...`);
-                        document.body.removeChild(emailInputForm);  // Clean up after submission
-                    } else {
-                        speak("Please provide a valid email address.");
-                    }
-                });
-            } else if (transcript.includes("play music")) {
-                const song = prompt("What song would you like to play?");
-                if (song) {
-                    const query = encodeURIComponent(song);
-                    window.open(`https://open.spotify.com/search/${query}`, "_blank");
-                    speak(`Playing "${song}" on Spotify...`);
-                } else {
-                    speak("Okay, no song selected.");
-                }
-            } else if (transcript.includes("set alarm")) {
-                speak("Alarm set for 7:00 AM.");
-            } else if (transcript.includes("what's the weather in")) {
-                const location = transcript.split("in").pop().trim();
-                const weather = weatherData[location] || "Sorry, I don't have data for that location.";
-                speak(weather);
-            } else if (transcript.includes("find restaurants")) {
-                speak("Which location would you like me to search for restaurants in?");
-                recognition.onresult = function (event) {
-                    const location = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
-                    if (location) {
-                        const url = `https://www.yelp.com/search?find_desc=restaurants&find_loc=${encodeURIComponent(location)}`;
-                        window.open(url, "_blank");
-                        speak(`Searching for restaurants in ${location}...`);
-                    }
-                };
-            } else if (transcript.includes("play radio")) {
-                speak("Playing BBC Radio...");
-                window.open("https://www.bbc.co.uk/sounds/play/live:bbc_radio_one", "_blank");
-            } else if (transcript.includes("ask gpt") || transcript.includes("chatgpt")) {
-                const userQuery = transcript.replace("ask gpt", "").replace("chatgpt", "").trim();
-                
-                if (userQuery) {
-                    speak("Let me ask ChatGPT for you...");
-                    
-                    // Call the GPT API
-                    askGPT(userQuery).then(gptResponse => {
-                        // Clyde speaks the GPT response
-                        speak(gptResponse);
-                    }).catch(error => {
-                        speak("Sorry, I couldn't connect to ChatGPT right now.");
-                        console.error("Error connecting to GPT:", error);
-                    });
-                } else {
-                    speak("Please tell me what to ask ChatGPT.");
-                }
+            // Check if choices exist in the response
+            if (data.choices && data.choices.length > 0) {
+                return data.choices[0].message.content; // Correct way to access message
             } else {
-                speak("Yes, How may I assist you?");
+                console.error("Error: No choices returned from API. Response data:", JSON.stringify(data));
+                throw new Error("No choices returned from API");
             }
-
-            aiOutput.textContent = transcript;
+        } catch (error) {
+            // Log specific errors based on their type
+            if (error instanceof TypeError) {
+                console.error("TypeError: Network request failed. This may indicate a problem with the fetch operation or network connection.", error.message);
+            } else if (error instanceof SyntaxError) {
+                console.error("SyntaxError: There was an issue parsing the response JSON.", error.message);
+            } else {
+                console.error("Error in askGPT function:", error.message); // General error logging
+            }
+            throw error; // Re-throw the error for further handling if needed
         }
+    }
 
-        async function askGPT(prompt) {
-            const apiKey = "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";  // Use your actual OpenAI API key
-            const url = "https://api.openai.com/v1/chat/completions"; // Update to use chat/completions endpoint
-            
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${apiKey}`
-                    },
-                    body: JSON.stringify({
-                        model: "gpt-3.5-turbo",  // Specify model
-                        messages: [
-                            { "role": "system", "content": "You are a helpful assistant." }, 
-                            { "role": "user", "content": prompt }
-                        ],
-                        max_tokens: 100,  // Adjust as necessary
-                    })
-                });
 
-                // Check if the response was successful
-                if (!response.ok) {
-                    const errorDetails = await response.json(); // Get error details from response
-                    console.error(`Error: Network response was not ok. Status: ${response.status}, Status Text: ${response.statusText}, Details: ${JSON.stringify(errorDetails)}`);
-                    throw new Error(`Network response was not ok: ${response.statusText} - ${errorDetails.message}`);
-                }
+    function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        const voices = window.speechSynthesis.getVoices();
 
-                const data = await response.json();
+        // Attempt to find a British male voice
+        const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
 
-                // Check if choices exist in the response
-                if (data.choices && data.choices.length > 0) {
-                    return data.choices[0].message.content; // Correct way to access message
-                } else {
-                    console.error("Error: No choices returned from API. Response data:", JSON.stringify(data));
-                    throw new Error("No choices returned from API");
-                }
-            } catch (error) {
-                // Log specific errors based on their type
-                if (error instanceof TypeError) {
-                    console.error("TypeError: Network request failed. This may indicate a problem with the fetch operation or network connection.", error.message);
-                } else if (error instanceof SyntaxError) {
-                    console.error("SyntaxError: There was an issue parsing the response JSON.", error.message);
-                } else {
-                    console.error("Error in askGPT function:", error.message); // General error logging
-                }
-                throw error; // Re-throw the error for further handling if needed
-            }
+        // Set the voice for the utterance
+        utterance.voice = britishMaleVoice || voices.find(voice => voice.lang === 'en-GB');
+        utterance.lang = 'en-GB';
+        speechSynthesis.speak(utterance);
+    }
+
+    // Immediately set the voice after loading
+    window.speechSynthesis.onvoiceschanged = () => {
+        const voices = window.speechSynthesis.getVoices();
+        // Check if we have the desired voice
+        const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
+
+        // Ensure the voice is stored or accessible for future use
+        if (britishMaleVoice) {
+            // Optionally store or configure it here
         }
+    };
 
+    window.onload = function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const loginButton = document.getElementById('loginButton');
 
-        function speak(text) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            const voices = window.speechSynthesis.getVoices();
-
-            // Attempt to find a British male voice
-            const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
-
-            // Set the voice for the utterance
-            utterance.voice = britishMaleVoice || voices.find(voice => voice.lang === 'en-GB');
-            utterance.lang = 'en-GB';
-            speechSynthesis.speak(utterance);
+        if (isLoggedIn === 'true') {
+            // Hide the login button if the user is logged in
+            loginButton.style.display = 'none';
         }
-
-        // Immediately set the voice after loading
-        window.speechSynthesis.onvoiceschanged = () => {
-            const voices = window.speechSynthesis.getVoices();
-            // Check if we have the desired voice
-            const britishMaleVoice = voices.find(voice => voice.lang === 'en-GB' && voice.name.includes('Male'));
-
-            // Ensure the voice is stored or accessible for future use
-            if (britishMaleVoice) {
-                // Optionally store or configure it here
-            }
-        };
-        
-        window.onload = function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const loginButton = document.getElementById('loginButton');
-
-            if (isLoggedIn === 'true') {
-                // Hide the login button if the user is logged in
-                loginButton.style.display = 'none';
-            }
-        };
-
+    };
     </script>
 </body>
 </html>

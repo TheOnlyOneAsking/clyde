@@ -3,148 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
-    <title>Login - Clyde</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            width: 800px;
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 12px 24px #1F5FA0, 
-                        0 8px 16px #1F5FA0; /* Added a deeper shadow effect */
-
-        }
-
-        .login-section {
-            flex: 1;
-            padding: 40px;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .login-section h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .login-form input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: "Outfit", sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-            background-color: #f8f8f8;
-            transition: border-color 0.3s;
-        }
-
-        .login-form input:focus {
-            outline: none;
-            border-color: #1F5FA0;
-        }
-
-        .login-btn {
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
-            width: 100%;
-            padding: 12px;
-            background-color: #1F5FA0;
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .login-btn:hover {
-            background-color: #2080c3;
-            box-shadow: 0 4px 12px rgba(31, 95, 160, 0.5);
-        }
-
-        .new-here-section {
-            flex: 1;
-            background: linear-gradient(135deg, #1F5FA0, #20A9E8);
-            color: #fff;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .new-here-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .new-here-section p {
-            margin-bottom: 30px;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .signup-link-btn {
-            font-family: "Outfit", sans-serif;
-            font-weight: 600;
-            padding: 12px 20px;
-            background-color: #fff;
-            color: #1F5FA0;
-            border: none;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .signup-link-btn:hover {
-            background-color: #f1f1f1;
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
-        }
-    </style>
+    <title>Login to Clyde - Your Favorite Virtual Assistant</title>
 </head>
 <body>
     <div class="container">
-        <div class="login-section">
-            <h2>Login to Your Account</h2>
-            <form class="login-form" onsubmit="return false;">
-                <input type="email" id="login-email" placeholder="Email" required>
-                <input type="password" id="login-password" placeholder="Password" required>
-                <button type="button" class="login-btn" onclick="login()">Sign In</button>
-            </form>
+            <div class="login-section">
+                <h2>Login to Your Account</h2>
+                <form class="login-form" onsubmit="return false;">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="button" class="login-btn" onclick="login()">Sign In</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </div>
+            <div class="new-here-section">
+                <h2>New Here?</h2>
+                <p>Sign up and discover a great amount of new opportunities!</p>
+                <button class="signup-link-btn" onclick="redirectToSignup()">Sign Up</button>
+            </div>
         </div>
-        <div class="new-here-section">
-            <h2>New Here?</h2>
-            <p>Sign up and discover a great amount of new opportunities!</p>
-            <button class="signup-link-btn" onclick="redirectToSignup()">Sign Up</button>
-        </div>
-    </div>
+    
 
     <script>
 

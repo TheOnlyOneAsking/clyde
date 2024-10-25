@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders - Clyde AI</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Basic styles for the reminders page */
+        .reminders-section {
+            margin-top: 20px;
+        }
+        .reminder-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .reminder-text {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .reminder-button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-wrapper">
+            <div class="main-content">
+                <div class="main-content__header">
+                    <div class="header__inner">
+                        <a href="javascript:void(0)" class="icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <h1>Reminders - Clyde AI</h1>
+                    </div>
+                </div>
+
+                <div class="main-content__body reminders-section">
+                    <h2>Your Reminders</h2>
+                    <div id="reminders-list">
+                        <!-- Reminders will be dynamically added here -->
+                    </div>
+
+                    <form id="reminder-form" onsubmit="return addReminder()">
+                        <div class="input-field-group">
+                            <input type="text" id="reminder-input" class="main-search-input" placeholder="Add a new reminder" required>
+                        </div>
+                        <button type="submit" class="card card__button">Add Reminder</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="account-panel">
+                <div class="account-panel__resizer"></div>
+                <div class="account-panel__inner">
+                    <div class="account-panel__content">
+                        <div class="account-header">
+                            <div class="account-header__nav">
+                                <a href="login.html">Profile</a>
+                                <a href="account.html">Settings</a>
+                            </div>
+                            <a href="https://www.joshadamous.com/" class="user-avatar" style="background-image: url(https://www.joshadamous.com/images/profile.jpeg)" target="_blank"></a>
+                        </div>
+
+                        <div class="account-content">
+                            <h2>Hello, <span id="greeting">Guest</span></h2>
+                            <div class="account-card-list">
+                                <!-- Account cards go here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const reminders = [];
+
+        function addReminder() {
+            const reminderInput = document.getElementById('reminder-input');
+            const reminderText = reminderInput.value.trim();
+
+            if (reminderText) {
+                reminders.push(reminderText);
+                reminderInput.value = ''; // Clear the input
+                displayReminders();
+            }
+            return false; // Prevent form submission
+        }
+
+        function displayReminders() {
+            const remindersList = document.getElementById('reminders-list');
+            remindersList.innerHTML = ''; // Clear existing reminders
+
+            reminders.forEach((reminder, index) => {
+                const reminderItem = document.createElement('div');
+                reminderItem.className = 'reminder-item';
+                reminderItem.innerHTML = `
+                    <span class="reminder-text">${reminder}</span>
+                    <button class="reminder-button" onclick="removeReminder(${index})">Remove</button>
+                `;
+                remindersList.appendChild(reminderItem);
+            });
+        }
+
+        function removeReminder(index) {
+            reminders.splice(index, 1); // Remove the reminder from the array
+            displayReminders(); // Update the display
+        }
+    </script>
+</body>
+</html>
