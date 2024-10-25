@@ -3,131 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Profile - Clyde</title>
     <style>
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: #121212;
+            background-color: #0084ff;
             color: white;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding-top: 50px;
+            height: 100vh;
         }
 
-        .account-container {
+        .profile-container {
             background-color: #1F5FA0;
             padding: 30px;
             border-radius: 10px;
-            width: 300px;
+            width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .profile-image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        h2 {
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .profile-option {
             margin-bottom: 20px;
         }
 
-        .profile-image img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #fff;
+        .profile-option label {
+            display: block;
+            margin-bottom: 5px;
         }
 
-        .profile-image input[type="file"] {
-            margin-top: 10px;
-        }
-
-        .change-password {
-            margin-top: 20px;
-        }
-
-        .change-password input {
+        .profile-option input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
             border-radius: 5px;
             border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .profile-option input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
         }
 
         button {
-            padding: 10px;
+            padding: 12px;
             background-color: #20A9E8;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            margin-top: 10px; /* Added margin for better spacing */
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #1D91D0;
         }
     </style>
 </head>
 <body>
 
-<div class="account-container">
-    <div class="profile-image">
-        <img src="profile.png" id="profileImage" alt="Profile Image">
-        <input type="file" id="uploadImage" accept="image/*" onchange="changeProfileImage()">
-        <button id="saveImageButton" onclick="saveProfileImage()" style="display: none;">Save Profile Image</button>
+    <div class="profile-container">
+        <h2>Profile Settings</h2>
+        <div class="profile-option">
+            <label for="username">Change Username</label>
+            <input type="text" id="username" placeholder="New Username">
+        </div>
+        <div class="profile-option">
+            <label for="email">Change Email</label>
+            <input type="email" id="email" placeholder="New Email">
+        </div>
+        <div class="profile-option">
+            <label for="password">Change Password</label>
+            <input type="password" id="password" placeholder="New Password">
+        </div>
+        <button onclick="saveChanges()">Save Changes</button>
     </div>
-
-    <div class="change-password">
-        <h3>Change Password</h3>
-        <input type="password" id="oldPassword" placeholder="Old Password" required>
-        <input type="password" id="newPassword" placeholder="New Password" required>
-        <button onclick="changePassword()">Change Password</button>
-    </div>
-</div>
-
 <script>
-    // Load the profile image from localStorage when the page loads
+    function saveChanges() {
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        alert('Changes saved successfully!');
+    }
+
     window.onload = function() {
-        const savedImage = localStorage.getItem('profileImage');
-        if (savedImage) {
-            document.getElementById('profileImage').src = savedImage;
-        }
+        document.getElementById('username').value = localStorage.getItem('username') || '';
+        document.getElementById('email').value = localStorage.getItem('email') || '';
+        document.getElementById('password').value = localStorage.getItem('password') || '';
     };
-
-    function changeProfileImage() {
-        const fileInput = document.getElementById('uploadImage');
-        const profileImage = document.getElementById('profileImage');
-        const saveImageButton = document.getElementById('saveImageButton');
-
-        if (fileInput.files && fileInput.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                profileImage.src = e.target.result; // Update the image source to the uploaded file
-                saveImageButton.style.display = 'block'; // Show the save button
-            }
-            reader.readAsDataURL(fileInput.files[0]); // Read the uploaded file
-        } else {
-            profileImage.src = 'profile.png'; // Reset to default if no file is selected
-            saveImageButton.style.display = 'none'; // Hide the save button
-        }
-    }
-
-    function saveProfileImage() {
-        const profileImage = document.getElementById('profileImage').src;
-        localStorage.setItem('profileImage', profileImage); // Save the image to localStorage
-        alert("Profile image saved successfully!");
-    }
-
-    function changePassword() {
-        const oldPassword = document.getElementById('oldPassword').value;
-        const newPassword = document.getElementById('newPassword').value;
-        const email = localStorage.getItem('loginEmail');
-
-        const storedPassword = localStorage.getItem(email);
-        if (storedPassword === oldPassword) {
-            localStorage.setItem(email, newPassword);
-            alert("Password changed successfully!");
-        } else {
-            alert("Old password is incorrect.");
-        }
-    }
 </script>
 
 </body>
