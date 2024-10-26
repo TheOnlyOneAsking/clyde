@@ -4,38 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0084ff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container and Panel */
+        .settings-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .settings-panel {
+            background: #ffffff;
+            color: #0084ff;
+            border-radius: 10px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Titles */
+        .header-title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #0084ff;
+            margin-bottom: 20px;
+        }
+
+        .settings-title {
+            font-size: 2em;
+            color: #0084ff;
+            margin-bottom: 30px;
+        }
+
+        /* Input Fields */
+        .input-field-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #0084ff;
+            outline: none;
+        }
+
+        /* Buttons */
+        .button-primary, .button-secondary {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button-primary {
+            background-color: #0084ff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .button-primary:hover {
+            background-color: #006bb3;
+        }
+
+        .button-secondary {
+            background-color: #e0e0e0;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .button-secondary:hover {
+            background-color: #c7c7c7;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="app-wrapper">
-        <div class="main-content">
-            <div class="main-content__header">
-                <div class="header__inner">
-                    <h1>Settings</h1>
+    <div class="settings-container">
+        <div class="settings-panel">
+            <h1 class="header-title">Settings</h1>
+            <div class="settings-content">
+                <h2 class="settings-title">Account Settings</h2>
+                <div class="input-field-group">
+                    <input type="text" id="username" class="input-field" placeholder="Change Username">
                 </div>
-            </div>
-            <div class="main-content__body">
-                <div class="account-panel">
-                    <div class="account-panel__inner">
-                        <div class="account-header">
-                            <h2>Account Settings</h2>
-                        </div>
-                        <div class="account-panel__content">
-                            <div class="input-field-group">
-                                <input type="text" class="main-search-input" placeholder="Change Username">
-                            </div>
-                            <div class="input-field-group">
-                                <input type="email" class="main-search-input" placeholder="Change Email">
-                            </div>
-                            <div class="input-field-group">
-                                <input type="password" class="main-search-input" placeholder="Change Password">
-                            </div>
-                            <button class="card__button"><span>Save Changes</span></button>
-                        </div>
-                    </div>
+                <div class="input-field-group">
+                    <input type="email" id="email" class="input-field" placeholder="Change Email">
                 </div>
+                <div class="input-field-group">
+                    <input type="password" id="password" class="input-field" placeholder="Change Password">
+                </div>
+                <button class="button-primary" onclick="saveChanges()"><span>Save Changes</span></button>
+                <button class="button-secondary" onclick="goToHomePage()">Return to Home Page</button>
             </div>
         </div>
     </div>
+
+    <script>
+        // Load saved user data on page load
+        window.onload = function() {
+            document.getElementById("username").value = localStorage.getItem("username") || "";
+            document.getElementById("email").value = localStorage.getItem("email") || "";
+            document.getElementById("password").value = localStorage.getItem("password") || "";
+        };
+
+        // Function to save changes to localStorage
+        function saveChanges() {
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Store values in localStorage
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            alert("Changes saved successfully!");
+        }
+
+        // Redirect to home page
+        function goToHomePage() {
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>

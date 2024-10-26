@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clyde Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0084ff;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Page Wrapper */
+        .app-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .main-content, .account-panel {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Profile Content */
+        .profile-section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-section h2 {
+            color: #0084ff;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .profile-info, .favorite-songs, .now-playing {
+            margin-top: 30px;
+        }
+
+        /* User Data and Buttons */
+        .input-field-group {
+            margin: 20px 0;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            background-color: #0084ff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #333;
+        }
+
+        .button-secondary {
+            background-color: #121212;
+            color: #0084ff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="main-content">
+            <div class="profile-section">
+                <h2>Welcome, <span id="userEmail">Guest</span></h2>
+                <div class="input-field-group">
+                    <input type="text" class="input-field" id="username" placeholder="Update Username">
+                </div>
+                <div class="input-field-group">
+                    <input type="email" class="input-field" id="email" placeholder="Update Email">
+                </div>
+                <div class="input-field-group">
+                    <input type="password" class="input-field" id="password" placeholder="Update Password">
+                </div>
+                <button class="button" onclick="updateProfile()">Save Changes</button>
+                <button class="button button-secondary" href="index.html">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userEmailElement = document.getElementById('userEmail');
+            const logoutButton = document.querySelector('.button-secondary');
+
+            // Load saved user data
+            if (localStorage.getItem('email')) {
+                userEmailElement.textContent = localStorage.getItem('email');
+                logoutButton.style.display = "inline-block";
+            }
+
+            // Update Profile
+            window.updateProfile = function () {
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                if (email) {
+                    localStorage.setItem('email', email);
+                    userEmailElement.textContent = email;
+                }
+
+                if (username) {
+                    localStorage.setItem('username', username);
+                }
+
+                if (password) {
+                    localStorage.setItem('password', password);
+                }
+
+                alert("Profile Updated!");
+            }
+        });
+    </script>
+</body>
+</html>
