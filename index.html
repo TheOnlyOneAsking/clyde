@@ -1,281 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MPTXKCV8');</script>
-    <!-- End Google Tag Manager -->
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clyde - Your Favorite Virtual Assistant</title>
-    <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPTXKCV8"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-    
-        <div class="app-wrapper">
-            <div class="main-content">
-                <div class="main-content__header">
-                    <div class="header__inner">
-                        <a href="error404.html" class="icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                        <h1>clyde.ai</h1>
-                    </div>
+            <html>
+            <head>
+                <title>Clyde.ai</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+                <style>
+                    body {
+                        font-family: 'Proxima Nova', sans-serif;
+                        background: linear-gradient(135deg, #000428, #004e92);
+                    }
+                    .glass {
+                        background: rgba(255, 255, 255, 0.2);
+                        border-radius: 15px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                    }
+                    .title {
+                        font-family: 'Outfit', sans-serif;
+                    }
+                    .animation {
+                        margin-top: 20px;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8));
+                        background-size: 200% 100%;
+                        animation: loading 2s infinite;
+                    }
+                    @keyframes loading {
+                        0% {
+                            background-position: 200% 0;
+                        }
+                        100% {
+                            background-position: -200% 0;
+                        }
+                    }
+                </style>
+            </head>
+            <body class="flex items-center justify-center min-h-screen">
+                <div class="glass p-10 text-center max-w-lg">
+                    <h1 class="title text-6xl font-bold text-white">Clyde.ai</h1>
+                    <p class="text-2xl text-white mt-4">Your favorite voice assistant</p>
+                    <div class="animation"></div>
                 </div>
-        
-                <div class="main-content__body">
-                    <form>
-                        <div class="input-field-group">
-                            <input type="text" class="main-search-input" id="search-input" placeholder="Search">
-                        </div>
-                    </form>
-        
-                    <div class="trending-list">
-                        <div class="flex-vert">
-                            <a href="error404.html" class="card card__outlined card__centered-text">Trends</a>
-                            <a href="error404.html" class="card card__image" style="background-image: url(https://images.unsplash.com/photo-1558981822-0c0c5b070026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></a>
-                        </div>
-                        <div class="big-block">
-                            <a href="https://www.google.com/search?q=10+recipes+for+perfect+breakfasts" target="_blank" class="card card__white-bg card__lg-sq card__centered-text">
-                                <div class="centered-text-content">
-                                    <div class="emoji-lg emoji-mb20">🍳</div>
-                                    <div class="card__text"><span>10 recipes</span><br>for perfect breakfasts</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="flex-vert">
-                            <div class="flex-horz">
-                                <a href="error404.html" class="card card__image" style="background-image: url(https://images.unsplash.com/photo-1562569633-622303bafef5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80)"></a>
-                                <a href="error404.html" class="card card__white-bg card__centered-text">Cat Memes</a>
-                            </div>
-                            <div class="">
-                                <a href="error404.html" class="card card__rect card__lt-purple-bg flex-horz">
-                                    <div class="emoji-sm emoji-mr20">🔥</div>
-                                    <div class="card__text">You‘re<br><span>Breathtaking</span></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="explore-section">
-                        <h2>Explore</h2>
-                        <div class="explore-section__heading">
-                            <div class="explore-nav">
-                                <a href="error404.html" class="selected page-button" data-page="1">All</a>
-                                <a href="error404.html" class="page-button" data-page="2">Images</a>
-                                <a href="error404.html" class="page-button" data-page="4">News</a>
-                            </div>
-                        </div>
-        
-                            <a href="error404.html" class="filter-toggle">
-                                <div class="filter-icon">
-                                    <span class="circle"></span>
-                                    <span class="line"></span>
-                                    <span class="line"></span>
-                                    <span class="circle"></span>
-                                </div>
-                            </a>
-                        </div>
-        
-                        <div class="explore-section__list">
-                            <a href="error404.html" class="card card__white-bg card__link">
-                                <div class="card__text"><span>Design<br>Awards</span></div>
-                            </a>
-                            <a href="error404.html" class="card card__image card__tall" style="background-image: url(https://images.unsplash.com/photo-1562736171-c8150ae67a5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);">
-                                <div class="card__button"><span>Architecture</span></div>
-                            </a>
-                            <a href="https://www.fender.com/" target="_blank" class="card card__white-bg card__link">
-                                <div class="card__text"><span>Good<br>Guitars</span></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="account-panel">
-                <div class="account-panel__resizer"></div>
-                <div class="account-panel__inner">
-                    <div class="account-panel__content">
-                        <div class="account-header">
-                            <div class="account-header__nav">
-                                <a id="profileLoginButton" href="login.html">Login</a>
-                                <a href="settings.html">Settings</a>
-                                <a id="logoutButton" style="display: none;">Logout</a> <!-- Placeholder for logout button -->
-                            </div>
-                            <a href="https://www.joshadamous.com/" class="user-avatar" style="background-image: url(https://www.joshadamous.com/images/profile.jpeg)" target="_blank"></a>
-                        </div>
-                
-                        <div class="account-content" id="greeting">
-                            <h2>Hello, <span id="userEmail">Guest</span></h2>
-                            <div class="account-card-list">
-                                <a href="reminders.html" class="card card__image card__tall" style="background-image: url(https://images.unsplash.com/photo-1558237316-d4762d4b8ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);">
-                                    <div class="card__button">Your <span style="margin-left: 2px">Reminders</span></div>
-                                </a>
-                                <a href="https://www.google.com/search?q=weather" target="_blank" class="card card__off-white-bg card__lg-sq card__centered-text">
-                                    <div class="centered-text-content">
-                                        <div class="card__text">Check the <span>weather</span></div>
-                                        <div class="emoji-md emoji-mt20">☂️</div>
-                                    </div>
-                                </a>
-                                <a href="creator.html" class="card card__off-white-bg card__lg-sq card__centered-text">
-                                    <div class="centered-text-content">
-                                        <div class="card__text">Do you know who made it <span>ALL?</span></div>
-                                        <div class="emoji-md emoji-mt20">™️</div>
-                                    </div>
-                                </a>
-                            </div>
-                
-                            <div class="now-playing">
-                                <h3>Now Playing</h3>
-                                <div class="songs-list">
-                                    <div class="card card__player card__lt-pink-bg">
-                                        <div class="album-artwork" style="background-image: url(https://images.genius.com/74622f434a6e852420ea522d6aae36f1.1000x1000x1.jpg)"></div>
-                                        <div class="song-info">
-                                            <div class="song-title">Going Bad (ft. Drake)</div>
-                                            <div class="song-artist">Meek Mill</div>
-                                        </div>
-                                        <a href="error404.html" class="control-icon">
-                                            <span></span>
-                                            <span></span>
-                                        </a>
-                                    </div>
-                                    <a href="error404.html" class="card card__player card__next-song">
-                                        <div class="song-info">
-                                            <div class="song-title">Sicko Mode</div>
-                                            <div class="song-artist">Travis Scott</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="account-pagination">
-                                <div class="pagination-list">
-                                    <a href="error404.html" class="selected"><span></span></a>
-                                    <a href="error404.html"><span></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+            </body>
+            </html>
                 <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-                            const loginEmail = localStorage.getItem('loginEmail') || "Guest";
-                            const profileLoginButton = document.getElementById('profileLoginButton');
-                            const logoutButton = document.getElementById('logoutButton');
-                            document.getElementById("userEmail").textContent = loginEmail;
-
-                            function displayReminders() {
-                            const remindersList = document.getElementById('reminders-list');
-                            remindersList.innerHTML = ''; // Clear existing reminders
-
-                            reminders.forEach((reminder, index) => {
-                                const reminderItem = document.createElement('div');
-                                reminderItem.className = 'reminder-item';
-                                reminderItem.innerHTML = `
-                                    <span class="reminder-text">${reminder.text} - ${new Date(reminder.time).toLocaleString()}</span>
-                                    <button class="reminder-button" onclick="removeReminder(${index})">Remove</button>
-                                `;
-                                remindersList.appendChild(reminderItem);
-                            });
-                        }
-
-                            profileLoginButton.textContent = isLoggedIn ? 'Profile' : 'Login';
-                            profileLoginButton.href = isLoggedIn ? 'profile.html' : 'login.html';
-                            if (isLoggedIn) {
-                                logoutButton.style.display = 'inline';
-                            }
-
-                            logoutButton.addEventListener('click', () => {
-                                localStorage.setItem('isLoggedIn', 'false');
-                                localStorage.removeItem('loginEmail');
-                                window.location.href = 'login.html';
-                            });                
-                        // Handle search input and open Google search in new tab
-                        const searchForm = document.querySelector('.main-content__body form');
-                        searchForm.addEventListener('submit', (event) => {
-                            event.preventDefault();
-                            const searchTerm = document.getElementById('search-input').value;
-                            if (searchTerm) {
-                                window.open(`https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`, '_blank');
-                            }
-                        });
-                
-                        // Audio toggle functionality
-                        let isPlaying = false;
-                        const audio = new Audio();
-                
-                        function toggleAudio() {
-                            if (isPlaying) {
-                                audio.pause();
-                                document.querySelector('.song-title').innerText = 'No Song Playing';
-                                document.querySelector('.song-artist').innerText = 'No Artist';
-                            } else {
-                                audio.play();
-                                audio.onplaying = function () {
-                                    document.querySelector('.song-title').innerText = 'Your Song Title';
-                                    document.querySelector('.song-artist').innerText = 'Your Song Artist';
-                                };
-                            }
-                            isPlaying = !isPlaying;
-                        }
-                
-                        // Explore page loading
-                        function loadExplorePage(page) {
-                            const exploreList = document.getElementById('explore-list');
-                            exploreList.innerHTML = '';
-                
-                            if (page === '1') {
-                                exploreList.innerHTML = `
-                                    <a href="error404.html" class="card card__white-bg card__link">
-                                        <div class="avatar" style="background-image: url(https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80)"></div>
-                                        <div class="card__text"><span>Design<br>Awards</span></div>
-                                    </a>
-                                    <a href="https://www.fender.com/" target="_blank" class="card card__white-bg card__link">
-                                        <div class="avatar" style="background-image: url(https://media.wired.com/photos/6390eaffd87d46df54e99cc7/master/pass/Fender-American-Vintage-II-Strat-Reissue-Gear.jpg)"></div>
-                                        <div class="card__text"><span>Good<br>Guitars</span></div>
-                                    </a>
-                                `;
-                            }
-                            // Additional page loads based on `page` variable...
-                        }
-                        
-                
-                        document.querySelectorAll('.page-button').forEach(button => {
-                            button.addEventListener('click', (e) => {
-                                const page = e.target.getAttribute('data-page');
-                                loadExplorePage(page);
-                                document.querySelectorAll('.page-button').forEach(btn => btn.classList.remove('selected'));
-                                e.target.classList.add('selected');
-                            });
-                        });
-                    });
-                
-                    // Logout function
-                    logoutButton.addEventListener('click', () => {
-                        localStorage.setItem('isLoggedIn', 'false');
-                        localStorage.removeItem('loginEmail');
-                        alert("Logged out successfully!");
-                        window.location.href = 'login.html'; // Redirect to login page
-                    });
-
-    // Function to redirect to login page
-    function redirectToLogin() {
-        window.location.href = "login.html";
-    }
-
-
     // Check if user is logged in
             navigator.mediaDevices.getUserMedia({ audio: true })
         .then(stream => {
@@ -455,56 +226,6 @@
         aiOutput.textContent = transcript;
     }
 
-    async function askGPT(prompt) {
-        const apiKey = "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";  // Use your actual OpenAI API key
-        const url = "https://api.openai.com/v1/chat/completions"; // Update to use chat/completions endpoint
-        
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",  // Specify model
-                    messages: [
-                        { "role": "system", "content": "You are a helpful assistant." }, 
-                        { "role": "user", "content": prompt }
-                    ],
-                    max_tokens: 100,  // Adjust as necessary
-                })
-            });
-
-            // Check if the response was successful
-            if (!response.ok) {
-                const errorDetails = await response.json(); // Get error details from response
-                console.error(`Error: Network response was not ok. Status: ${response.status}, Status Text: ${response.statusText}, Details: ${JSON.stringify(errorDetails)}`);
-                throw new Error(`Network response was not ok: ${response.statusText} - ${errorDetails.message}`);
-            }
-
-            const data = await response.json();
-
-            // Check if choices exist in the response
-            if (data.choices && data.choices.length > 0) {
-                return data.choices[0].message.content; // Correct way to access message
-            } else {
-                console.error("Error: No choices returned from API. Response data:", JSON.stringify(data));
-                throw new Error("No choices returned from API");
-            }
-        } catch (error) {
-            // Log specific errors based on their type
-            if (error instanceof TypeError) {
-                console.error("TypeError: Network request failed. This may indicate a problem with the fetch operation or network connection.", error.message);
-            } else if (error instanceof SyntaxError) {
-                console.error("SyntaxError: There was an issue parsing the response JSON.", error.message);
-            } else {
-                console.error("Error in askGPT function:", error.message); // General error logging
-            }
-            throw error; // Re-throw the error for further handling if needed
-        }
-    }
-
 
     function speak(text) {
         const utterance = new SpeechSynthesisUtterance(text);
@@ -528,16 +249,6 @@
         // Ensure the voice is stored or accessible for future use
         if (britishMaleVoice) {
             // Optionally store or configure it here
-        }
-    };
-
-    window.onload = function() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        const loginButton = document.getElementById('loginButton');
-
-        if (isLoggedIn === 'true') {
-            // Hide the login button if the user is logged in
-            loginButton.style.display = 'none';
         }
     };
     </script>
